@@ -6,7 +6,7 @@ import java.util.*;
 public class GameManager {
 
     public static void saveGameProgress(Player player) {
-        try (PrintWriter writer = new PrintWriter(new FileWriter("game_progress.txt"))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("src/PBOFINALPROJECTHURA/internal/GUI/game_progress.txt"))) {
             writer.println(player.getName());
             writer.println(player.getMoney());
 
@@ -59,7 +59,7 @@ public class GameManager {
     public static Player loadGameProgress() {
         Player player = null;
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("game_progress.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/PBOFINALPROJECTHURA/internal/GUI/game_progress.txt"))) {
             String playerName = reader.readLine();
             int playerMoney = Integer.parseInt(reader.readLine());
 
@@ -80,19 +80,24 @@ public class GameManager {
                 Monster monster = null;
                 switch (element) {
                     case "Fire":
-                        monster = new FireMonster(name, level, hp);
+                        monster = new FireMonster(name, level, level * 20);
+                        monster.setHP(hp);
                         break;
                     case "Water":
-                        monster = new WaterMonster(name, level, hp);
+                        monster = new WaterMonster(name, level, level * 20);
+                        monster.setHP(hp);
                         break;
                     case "Grass":
-                        monster = new GrassMonster(name, level, hp);
+                        monster = new GrassMonster(name, level, level * 20);
+                        monster.setHP(hp);
                         break;
                     case "Ice":
-                        monster = new IcedMonster(name, level, hp);
+                        monster = new IcedMonster(name, level, level * 20);
+                        monster.setHP(hp);
                         break;
                     case "Ground":
-                        monster = new GroundMonster(name, level, hp);
+                        monster = new GroundMonster(name, level, level * 20);
+                        monster.setHP(hp);
                         break;
                     default:
                         throw new IllegalStateException("Unexpected value: " + element);

@@ -1,7 +1,6 @@
 package PBOFINALPROJECTHURA.internal.GUI;
 
-import PBOFINALPROJECTHURA.internal.Dungeon;
-import PBOFINALPROJECTHURA.internal.Player;
+import PBOFINALPROJECTHURA.internal.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -161,16 +160,44 @@ public class HomeBaseDisplay extends BaseLayer {
 
     private void checkForExit(int x, int y) {
         if (map[y][x] == 'X') {
-            JOptionPane.showMessageDialog(this, "Go to the Dungeon!");
+            if (player.getMonster1() != null && player.getMonster2() != null && player.getMonster3() != null){
+                String[] options = {"Forest Dungeon", "Swamp Dungeon", "Volcano Dungeon"};
+
+                int choice = JOptionPane.showOptionDialog(null,
+                        "Pilih Dungeon yang Anda Inginkan:",
+                        "Dungeon",
+                        JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE,
+                        null,
+                        options,
+                        options[0]);
+
+                switch (choice) {
+                    case 0:
+                        ForestDungeon fd = new ForestDungeon(player);
+                        break;
+                    case 1:
+                        SwampDungeon sd = new SwampDungeon(player);
+                        break;
+                    case 2:
+                        VolcanoDungeon vd = new VolcanoDungeon(player);
+                        break;
+                }
+                dispose();
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "You Need To Have Full Team In The Dungeon!");
+            }
         }
         else if (map[y][x] == 'T') {
-            buyItemDisplay = new BuyItemDisplay();
-            buyItemDisplay.setPlayer(player);
+            buyItemDisplay = new BuyItemDisplay(player);
             buyItemDisplay.setVisible(true);
+            buyItemDisplay.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //            JOptionPane.showMessageDialog(this, "Buy Item!");
         }
         else if (map[y][x] == 'M') {
-            JOptionPane.showMessageDialog(this, "Choose your monster!");
+            MonsterBoxDisplay mbd = new MonsterBoxDisplay(player);
+            mbd.setVisible(true);
         }
 
     }
