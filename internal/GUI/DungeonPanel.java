@@ -1,7 +1,6 @@
 package PBOFINALPROJECTHURA.internal.GUI;
 
 import PBOFINALPROJECTHURA.internal.Dungeon;
-import PBOFINALPROJECTHURA.internal.DungeonTest;
 import PBOFINALPROJECTHURA.internal.Player;
 
 import javax.swing.*;
@@ -22,7 +21,7 @@ public class DungeonPanel extends BaseLayer {
     private Player player;
 
     public DungeonPanel(Dungeon dungeon, char[][] map, int playerX, int playerY, Player player) {
-        super(new JPanel(null)); // Using the constructor of BaseLayer that expects a JPanel
+        super(new JPanel(null), player); // Using the constructor of BaseLayer that expects a JPanel
         setUpBackground("", "dungeon");
         setTitle("Dungeon Game"); // Set the title of the JFrame
         setSize(517, 563); // Set the size of the JFrame

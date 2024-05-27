@@ -107,9 +107,17 @@ public class MonsterBoxDisplay extends BaseLayer implements ActionListener {
                 Monster finalMonster = monster;
                 levelUpButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        finalMonster.setLevel(finalMonster.getLevel()+1);
-                        finalMonster.setCanEvolve(true);
-                        updateMonster();
+                        if (finalMonster.getEP() >= 100){
+                            finalMonster.setLevel(finalMonster.getLevel()+1);
+                            finalMonster.setMaxHP(finalMonster.getLevel() * 20);
+                            finalMonster.setHP(finalMonster.getLevel() * 20);
+                            finalMonster.setCanEvolve(true);
+                            finalMonster.setEPMinus(100);
+                            updateMonster();
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(getContentPane(), "Can't Level Up, You Don't Have EP Enough");
+                        }
                     }
                 });
                 getContentPane().add(levelUpButton);

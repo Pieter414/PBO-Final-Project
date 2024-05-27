@@ -1,0 +1,22 @@
+Pieter
+8000
+3
+Fire Monster
+158
+3160
+300
+Fire
+Ice Monster
+153
+3060
+0
+Ice
+Grass Monster
+151
+3020
+100
+Grass
+0
+0
+0
+0

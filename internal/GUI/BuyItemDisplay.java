@@ -1,6 +1,6 @@
 package PBOFINALPROJECTHURA.internal.GUI;
 
-import PBOFINALPROJECTHURA.internal.Player;
+import PBOFINALPROJECTHURA.internal.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,8 +12,7 @@ public class BuyItemDisplay extends BaseLayer implements ActionListener {
     private JPanel panel;
     private Player player;
     private JLabel goldLabel;
-    private int goldAmount = 1000;
-    private Player player;
+    private int goldAmount;
 
     public BuyItemDisplay(Player player) {
         super(new JPanel(null), player);
@@ -21,6 +20,7 @@ public class BuyItemDisplay extends BaseLayer implements ActionListener {
         setTitle("Game Shop");
         setSize(960, 590);
         setPlayer(player);
+        this.goldAmount = player.getMoney();
 
         panel.setLayout(null);
         setUpBackground("src/PBOFINALPROJECTHURA/assets/images/gameshop1.jpg", "gameShop");
@@ -129,12 +129,6 @@ public class BuyItemDisplay extends BaseLayer implements ActionListener {
         }
         goldAmount -= amount;
         goldLabel.setText("Gold: " + goldAmount);
-    }
-
-
-    public static void main(String[] args) {
-            Player player = new Player("PlayerName"); // Create a new player
-            BuyItemDisplay bs = new BuyItemDisplay(player);
     }
 
 }

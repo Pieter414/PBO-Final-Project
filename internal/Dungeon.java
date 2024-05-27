@@ -22,7 +22,7 @@ public class Dungeon {
         playerX = 1;
         playerY = 9;
         this.player = player;
-        dungeonPanel = new DungeonPanel(this, map, playerX, playerY);  // This is now a JFrame
+        dungeonPanel = new DungeonPanel(this, map, playerX, playerY, player);  // This is now a JFrame
         dungeonPanel.setVisible(true); // Make the frame visible
         this.defeated = new boolean[monsterFix.length];
     }
@@ -107,13 +107,13 @@ public class Dungeon {
 
     public Monster generateRandomMonster() {
         final String[] MONSTER_NAMES = {"Fire Monster", "Water Monster", "Grass Monster", "Ground Monster", "Ice Monster"};
-        final int MAX_LEVEL = 50;
-        final int MAX_HP = 200;
+        final int MIN_LEVEL = Math.min(player.getMonster1().getLevel(), Math.max(player.getMonster2().getLevel(), player.getMonster3().getLevel())) / 2;
+        final int MAX_LEVEL = Math.max(player.getMonster1().getLevel(), Math.max(player.getMonster2().getLevel(), player.getMonster3().getLevel()));
 
         Random random = new Random();
 
-        int level = random.nextInt(MAX_LEVEL) + 1;
-        int maxHP = random.nextInt(MAX_HP) + 50; // HP antara 50 dan 250
+        int level = random.nextInt(MIN_LEVEL, MAX_LEVEL) + 1;
+        int maxHP = level * 20; // HP antara 50 dan 250
 
         switch (random.nextInt(5)) {
             case 0:

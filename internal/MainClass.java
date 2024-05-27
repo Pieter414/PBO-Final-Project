@@ -7,13 +7,12 @@ import java.io.IOException;
 
 public class MainClass {
     public static void main(String[] args) {
-        String filePath = "src/PBOFINALPROJECTHURA/internal/game_progress.txt";
+        String filePath = "src/PBOFINALPROJECTHURA/internal/GUI/game_progress.txt";
         if (isFileEmpty(filePath)) {
             Game g = new Game(new Player("PLACEHOLDERNAMEFORAWHILE123456789"));
         } else {
             Game g = new Game(GameManager.loadGameProgress());
         }
-
     }
 
     public static boolean isFileEmpty(String filePath) {
