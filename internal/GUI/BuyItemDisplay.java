@@ -16,7 +16,7 @@ public class BuyItemDisplay extends BaseLayer implements ActionListener {
         setSize(960, 590);
 
         panel.setLayout(null);
-        setUpBackground("C:\\Users\\USER\\Desktop\\Asset PBO\\gameshop1.jpg", "homeBase");
+        setUpBackground("src/PBOFINALPROJECTHURA/assets/images/gameshop1.jpg", "homeBase");
         setUpButton();
 
         revalidate();
@@ -24,10 +24,10 @@ public class BuyItemDisplay extends BaseLayer implements ActionListener {
     }
 
     private void setUpButton(){
-        XattackButton = createButton("Xattack", 240, 210, 125, 125, "C:\\Users\\USER\\Desktop\\Asset PBO\\xattack.png", this);
-        XdefenseButton = createButton("Xdefense", 580, 210, 125, 125, "C:\\Users\\USER\\Desktop\\Asset PBO\\xdefense.png", this);
-        potionButton = createButton("Potion", 240, 380, 125, 125, "C:\\Users\\USER\\Desktop\\Asset PBO\\potion.png", this);
-        superPotionButton = createButton("Super Potion", 580, 380, 125, 125, "C:\\Users\\USER\\Desktop\\Asset PBO\\superPotion.png", this);
+        XattackButton = createButton("Xattack", 240, 210, 125, 125, "src/PBOFINALPROJECTHURA/assets/images/xattack.png", this);
+        XdefenseButton = createButton("Xdefense", 580, 210, 125, 125, "src/PBOFINALPROJECTHURA/assets/images/xdefense.png", this);
+        potionButton = createButton("Potion", 240, 380, 125, 125, "src/PBOFINALPROJECTHURA/assets/images/potion.png", this);
+        superPotionButton = createButton("Super Potion", 580, 380, 125, 125, "src/PBOFINALPROJECTHURA/assets/images/superPotion.png", this);
     }
 
     private JButton createButton(String text, int x, int y, int width, int height, String imagePath, ActionListener action) {
