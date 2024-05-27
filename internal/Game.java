@@ -1,5 +1,7 @@
 package PBOFINALPROJECTHURA.internal;
 
+import PBOFINALPROJECTHURA.internal.GUI.HomeScreen;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -29,7 +31,7 @@ public class Game implements Serializable {
         // Misalnya: Inisialisasi player, homebase, dan dungeons
     }
 
-    public void handleException(PokemonException e) {
+    public void handleException(MonsterException e) {
         // Implementasi penanganan exception
         System.err.println("Terjadi kesalahan: " + e.getMessage());
     }

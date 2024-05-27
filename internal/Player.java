@@ -10,7 +10,7 @@ public class Player implements Serializable {
     private Monster monster1;
     private Monster monster2;
     private Monster monster3;
-    private Homebase homebase;
+    private HomeBase homebase;
     private Dungeon location;
     private ArrayList<Item> listPotion;
     private ArrayList<Item> listSuperPotion;
@@ -78,11 +78,11 @@ public class Player implements Serializable {
         this.monster3 = monster3;
     }
 
-    public Homebase getHomebase() {
+    public HomeBase getHomebase() {
         return homebase;
     }
 
-    public void setHomebase(Homebase homebase) {
+    public void setHomebase(HomeBase homebase) {
         this.homebase = homebase;
     }
 

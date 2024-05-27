@@ -1,11 +1,13 @@
 package PBOFINALPROJECTHURA.internal;
 
+import PBOFINALPROJECTHURA.internal.GUI.HomeBaseDisplay;
+
 import java.util.ArrayList;
 
-class Homebase {
+public class HomeBase {
     private ArrayList<Monster> listMonster;
 
-    public Homebase(Player player) {
+    public HomeBase(Player player) {
         listMonster = new ArrayList<>();
         HomeBaseDisplay hbd = new HomeBaseDisplay(player);
     }

@@ -1,5 +1,7 @@
 package PBOFINALPROJECTHURA.internal.GUI;
 
+import PBOFINALPROJECTHURA.internal.Player;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -22,15 +24,17 @@ public class HomeBaseDisplay extends BaseLayer {
     };
     private int playerX = 1; // Start at position of 'P'
     private int playerY = 9;
+    private Player player;
     private ImageIcon playerIcon, wallIcon, pathIcon, exitIcon, buyIcon, chooseMonsterIcon;
     private ImageIcon mapImage;
 
-    public HomeBaseDisplay() {
+    public HomeBaseDisplay(Player player) {
         super(new JPanel(null)); // Mengatur layout ke null untuk mengatur posisi secara manual
         setTitle("Home Base");
         setSize(610, 657);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        this.player = player;
 
         playerIcon = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\player.png");
         mapImage = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\floor.png");
@@ -183,7 +187,7 @@ public class HomeBaseDisplay extends BaseLayer {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new HomeBaseDisplay().setVisible(true));
+        SwingUtilities.invokeLater(() -> new HomeBaseDisplay(new Player("")).setVisible(true));
     }
 }
 

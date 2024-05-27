@@ -1,6 +1,5 @@
 package PBOFINALPROJECTHURA.internal;
 
-import PBOFINALPROJECTHURA.internal.GUI.BattleArenaDisplay;
 import PBOFINALPROJECTHURA.internal.GUI.DungeonPanel;
 
 import javax.swing.*;
@@ -77,7 +76,7 @@ public class DungeonTest {
         }
         else if (map[newY][newX] == 'X'){
             dungeonPanel.dispose();
-            Homebase hb = new Homebase(player);
+            HomeBase hb = new HomeBase(player);
         }
     }
 
