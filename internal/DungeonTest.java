@@ -1,6 +1,5 @@
 package PBOFINALPROJECTHURA.internal;
 
-import PBOFINALPROJECTHURA.internal.GUI.BattleArenaDisplay;
 import PBOFINALPROJECTHURA.internal.GUI.DungeonPanel;
 
 import javax.swing.*;
@@ -75,6 +74,10 @@ public class DungeonTest {
                 dungeonPanel.repaint(); // Request the panel to repaint
             }
         }
+        else if (map[newY][newX] == 'X'){
+            dungeonPanel.dispose();
+            HomeBase hb = new HomeBase(player);
+        }
     }
 
     private int findIndex(int x, int y){
@@ -91,7 +94,11 @@ public class DungeonTest {
         // Assume you have some Player class available
         // Fetch the player details, method needs to be defined or implemented
         SwingUtilities.invokeLater(() -> {
-            BattleArenaDisplay battleArena = new BattleArenaDisplay(player, encounteredMonster, false);
+            getDungeonPanel().disableMovement();
+            BattleArena battleArena = new BattleArena(player, encounteredMonster, null);
+            battleArena.onFinish(() -> {
+                dungeonPanel.enableMovement();
+            });
         });
     }
 
@@ -150,10 +157,6 @@ public class DungeonTest {
                 return null;
         }
     }
-
-
-
-
 
     private void initializeMap() {
         map = new char[][]{

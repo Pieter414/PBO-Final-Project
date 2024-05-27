@@ -1,18 +1,25 @@
 package PBOFINALPROJECTHURA.internal;
 
+import PBOFINALPROJECTHURA.internal.GUI.HomeBaseDisplay;
+
 import java.util.ArrayList;
 
-class Homebase {
+public class HomeBase {
     private ArrayList<Monster> listMonster;
 
-    public Homebase() {
+    public HomeBase(Player player) {
         listMonster = new ArrayList<>();
+        HomeBaseDisplay hbd = new HomeBaseDisplay(player);
     }
 
     public Monster changeElement(Monster monster, String newElement) {
         // Implementasi untuk mengubah elemen dari monster
         monster.setElement(newElement);
         return monster;
+    }
+
+    public void setListMonster(ArrayList<Monster> listMonster) {
+        this.listMonster = listMonster;
     }
 
     public void upgradeLevel(Monster monster) {

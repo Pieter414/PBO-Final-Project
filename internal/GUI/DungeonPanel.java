@@ -16,6 +16,7 @@ public class DungeonPanel extends BaseLayer {
     private ImageIcon playerIcon;
     private ImageIcon exitIcon;
     private DungeonTest dungeon;
+    private boolean canMove = true;  // Flag to control player movement
 
     public DungeonPanel(DungeonTest dungeon, char[][] map, int playerX, int playerY) {
         super(new JPanel(null)); // Using the constructor of BaseLayer that expects a JPanel
@@ -34,25 +35,35 @@ public class DungeonPanel extends BaseLayer {
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                int key = e.getKeyCode();
-                switch (key) {
-                    case KeyEvent.VK_UP:
-                        dungeon.movePlayer(0, -1);
-                        break;
-                    case KeyEvent.VK_DOWN:
-                        dungeon.movePlayer(0, 1);
-                        break;
-                    case KeyEvent.VK_LEFT:
-                        dungeon.movePlayer(-1, 0);
-                        break;
-                    case KeyEvent.VK_RIGHT:
-                        dungeon.movePlayer(1, 0);
-                        break;
+                if (canMove){
+                    int key = e.getKeyCode();
+                    switch (key) {
+                        case KeyEvent.VK_UP:
+                            dungeon.movePlayer(0, -1);
+                            break;
+                        case KeyEvent.VK_DOWN:
+                            dungeon.movePlayer(0, 1);
+                            break;
+                        case KeyEvent.VK_LEFT:
+                            dungeon.movePlayer(-1, 0);
+                            break;
+                        case KeyEvent.VK_RIGHT:
+                            dungeon.movePlayer(1, 0);
+                            break;
+                    }
                 }
             }
         });
 
         repaint(); // Call to paint the components
+    }
+
+    public void enableMovement() {
+        canMove = true;
+    }
+
+    public void disableMovement() {
+        canMove = false;
     }
 
     private void movePlayer(int dx, int dy) {

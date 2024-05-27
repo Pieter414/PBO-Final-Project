@@ -1,5 +1,6 @@
 package PBOFINALPROJECTHURA.internal.GUI;
 
+import PBOFINALPROJECTHURA.internal.*;
 import PBOFINALPROJECTHURA.internal.Player;
 
 import javax.swing.*;
@@ -80,6 +81,7 @@ public class HomeScreen extends BaseLayer implements ActionListener {
         else{
             System.out.println("game starting");
             dispose();
+            HomeBase hb = new HomeBase(player);
         }
     }
 
