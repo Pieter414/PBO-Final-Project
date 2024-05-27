@@ -36,8 +36,8 @@ public class HomeBaseDisplay extends BaseLayer {
         setLocationRelativeTo(null);
         this.player = player;
 
-        playerIcon = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\player.png");
-        mapImage = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\floor.png");
+        playerIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/player.png");
+        mapImage = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/floor.png");
 
         GridPanel backgroundPanel = new GridPanel(mapImage);
         backgroundPanel.setLayout(null); // Use null layout for absolute positioning
@@ -57,12 +57,12 @@ public class HomeBaseDisplay extends BaseLayer {
     }
 
     private void initializeGrid(JPanel panel) {
-        wallIcon = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\bricks.png");  // Load the wall image
-        pathIcon = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\floor.png");  // Load the path image
-        playerIcon = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\player.png");  // Load the player image
-        exitIcon = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\hole.png");  // Load the exit image
-        chooseMonsterIcon = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\pick.png");
-        buyIcon = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\shop.jpg");
+        wallIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/bricks.png");  // Load the wall image
+        pathIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/floor.png");  // Load the path image
+        playerIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/player.png");  // Load the player image
+        exitIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/hole.png");  // Load the exit image
+        chooseMonsterIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/pick.png");
+        buyIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/shop.jpg");
 
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLUMNS; j++) {

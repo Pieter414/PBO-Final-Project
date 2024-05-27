@@ -21,7 +21,7 @@ public class HomeScreen extends BaseLayer implements ActionListener {
         setSize(960, 590);
 
         panel.setLayout(null);
-        setUpBackground("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\images\\homeScreenBackground.jpg", "homeScreen");
+        setUpBackground("src/PBOFINALPROJECTHURA/assets/images/homeScreenBackground.jpg", "homeScreen");
         initializeActionListeners();
         setUpPokemonTitle();
         setUpButton();
@@ -38,7 +38,7 @@ public class HomeScreen extends BaseLayer implements ActionListener {
         setSize(960, 590);
 
         panel.setLayout(null);
-        setUpBackground("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\images\\homeScreenBackground.jpg", "homeScreen");
+        setUpBackground("src/PBOFINALPROJECTHURA/assets/images/homeScreenBackground.jpg", "homeScreen");
         initializeActionListeners();
         setUpPokemonTitle();
         setUpButton();
@@ -49,7 +49,7 @@ public class HomeScreen extends BaseLayer implements ActionListener {
     }
 
     private void setUpPokemonTitle(){
-        ImageIcon logoIcon = new ImageIcon("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\images\\monsterLogo.png");
+        ImageIcon logoIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/monsterLogo.png");
         logoLabel = new JLabel(logoIcon);
         logoLabel.setLayout(null); // Use null layout to manually position buttons
         logoLabel.setBounds(50, 40, logoIcon.getIconWidth(), logoIcon.getIconHeight());
