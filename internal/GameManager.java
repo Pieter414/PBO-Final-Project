@@ -2,33 +2,52 @@ package PBOFINALPROJECTHURA.internal;
 
 import java.io.*;
 import java.util.*;
-import javax.swing.*;
 
 public class GameManager {
 
-    public static void saveGameProgress(Player player, int healthPotionCount, HomeBase homebase) {
+    public static void saveGameProgress(Player player) {
         try (PrintWriter writer = new PrintWriter(new FileWriter("game_progress.txt"))) {
             writer.println(player.getName());
             writer.println(player.getMoney());
 
-            List<Monster> monsters = homebase.getListMonster();
+            List<Monster> monsters = Arrays.asList(player.getMonster1(), player.getMonster2(), player.getMonster3());
             writer.println(monsters.size());
+
             for (Monster monster : monsters) {
-                writer.println(monster.getName());
-                writer.println(monster.getLevel());
-                writer.println(monster.getHP());
-                writer.println(monster.getEP());
-                writer.println(monster.getElement());
+                if (monster != null) {
+                    writer.println(monster.getName());
+                    writer.println(monster.getLevel());
+                    writer.println(monster.getHP());
+                    writer.println(monster.getEP());
+                    writer.println(monster.getElement());
+                } else {
+                    writer.println("null");
+                }
             }
 
             List<Item> items = player.getListPotion();
             writer.println(items.size());
+            for (Item item : items) {
+                writer.println(item.getSifat());
+            }
+
             List<Item> items2 = player.getListSuperPotion();
             writer.println(items2.size());
+            for (Item item : items2) {
+                writer.println(item.getSifat());
+            }
+
             List<Item> items3 = player.getListXAttack();
             writer.println(items3.size());
+            for (Item item : items3) {
+                writer.println(item.getSifat());
+            }
+
             List<Item> items4 = player.getListXDefense();
             writer.println(items4.size());
+            for (Item item : items4) {
+                writer.println(item.getSifat());
+            }
 
             System.out.println("Game progress saved successfully!");
         } catch (IOException e) {
@@ -37,9 +56,8 @@ public class GameManager {
         }
     }
 
-    public static Player loadGameProgress(HomeBase homebase, JTextArea textArea, JLabel healthPotionLabel, JLabel moneyLabel) {
+    public static Player loadGameProgress() {
         Player player = null;
-        int healthPotionCount = 0;
 
         try (BufferedReader reader = new BufferedReader(new FileReader("game_progress.txt"))) {
             String playerName = reader.readLine();
@@ -49,66 +67,74 @@ public class GameManager {
             player.setMoney(playerMoney);
 
             int monsterCount = Integer.parseInt(reader.readLine());
-            ArrayList<Monster> monsters = new ArrayList<>();
             for (int i = 0; i < monsterCount; i++) {
                 String name = reader.readLine();
+                if (name.equals("null")) {
+                    continue;
+                }
                 int level = Integer.parseInt(reader.readLine());
+                int hp = Integer.parseInt(reader.readLine());
                 int ep = Integer.parseInt(reader.readLine());
                 String element = reader.readLine();
 
-                Monster monster;
+                Monster monster = null;
                 switch (element) {
                     case "Fire":
-                        monster = new FireMonster(name, level, 1000);
+                        monster = new FireMonster(name, level, hp);
                         break;
                     case "Water":
-                        monster = new WaterMonster(name, level, 1000);
+                        monster = new WaterMonster(name, level, hp);
                         break;
                     case "Grass":
-                        monster = new GrassMonster(name, level, 1000);
+                        monster = new GrassMonster(name, level, hp);
                         break;
                     case "Ice":
-                        monster = new IcedMonster(name, level, 1000);
+                        monster = new IcedMonster(name, level, hp);
                         break;
                     case "Ground":
-                        monster = new GroundMonster(name, level, 1000);
+                        monster = new GroundMonster(name, level, hp);
                         break;
                     default:
                         throw new IllegalStateException("Unexpected value: " + element);
                 }
                 monster.setEP(ep);
-                monsters.add(monster);
+
+                if (i == 0) {
+                    player.setMonster1(monster);
+                } else if (i == 1) {
+                    player.setMonster2(monster);
+                } else if (i == 2) {
+                    player.setMonster3(monster);
                 }
-            homebase.setListMonster(monsters);
-
-
-
-
+            }
 
             int potionCount = Integer.parseInt(reader.readLine());
             for (int i = 0; i < potionCount; i++) {
-                Item item = new Potion(50, "potion");
+                String itemName = reader.readLine();
+                Item item = new Potion(50, itemName);
                 player.addItem(item);
             }
+
             int superPotionCount = Integer.parseInt(reader.readLine());
             for (int i = 0; i < superPotionCount; i++) {
-                Item item = new Potion(200, "super potion");
+                String itemName = reader.readLine();
+                Item item = new Potion(200, itemName);
                 player.addItem(item);
             }
+
             int xAttackCount = Integer.parseInt(reader.readLine());
             for (int i = 0; i < xAttackCount; i++) {
-                Item item = new XItem(2, "x attack");
+                String itemName = reader.readLine();
+                Item item = new XItem(2, itemName);
                 player.addItem(item);
             }
+
             int xDefCount = Integer.parseInt(reader.readLine());
             for (int i = 0; i < xDefCount; i++) {
-                Item item = new XItem(2, "x defense");
+                String itemName = reader.readLine();
+                Item item = new XItem(2, itemName);
                 player.addItem(item);
             }
-
-            healthPotionLabel.setText("Health Potion: " + healthPotionCount);
-
-            moneyLabel.setText("Money: " + player.getMoney());
 
             System.out.println("Game progress loaded successfully!");
         } catch (IOException e) {
