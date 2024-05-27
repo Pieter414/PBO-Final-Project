@@ -34,8 +34,12 @@ public class TestClassMainDungeon {
 
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Dungeon");
-            DungeonTest dungeon = new DungeonTest(p);  // Create the DungeonTest instance
-            DungeonPanel dungeonPanel = dungeon.getDungeonPanel();  // Get the fully initialized panel
+            Dungeon dungeon = new Dungeon(p);
+            Dungeon forestDungeon = new ForestDungeon(p);
+            Dungeon volcanoDungeon = new VolcanoDungeon(p);
+            Dungeon swampDungeon = new SwampDungeon(p);
+            DungeonPanel dungeonPanel = forestDungeon.getDungeonPanel();
+
         });
     }
 }

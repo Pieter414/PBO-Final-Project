@@ -1,6 +1,6 @@
 package PBOFINALPROJECTHURA.internal.GUI;
 
-import PBOFINALPROJECTHURA.internal.DungeonTest;
+import PBOFINALPROJECTHURA.internal.Dungeon;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,10 +15,10 @@ public class DungeonPanel extends BaseLayer {
     private ImageIcon floorIcon;
     private ImageIcon playerIcon;
     private ImageIcon exitIcon;
-    private DungeonTest dungeon;
+    private Dungeon dungeon;
     private boolean canMove = true;  // Flag to control player movement
 
-    public DungeonPanel(DungeonTest dungeon, char[][] map, int playerX, int playerY) {
+    public DungeonPanel(Dungeon dungeon, char[][] map, int playerX, int playerY) {
         super(new JPanel(null)); // Using the constructor of BaseLayer that expects a JPanel
         setUpBackground("", "dungeon");
         setTitle("Dungeon Game"); // Set the title of the JFrame
@@ -79,10 +79,22 @@ public class DungeonPanel extends BaseLayer {
     }
 
     private void loadIcons() {
-        wallIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/bricks.png");
-        floorIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/floor.png");
-        playerIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/player.png");
-        exitIcon =  new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/exitIcon.png");
+        if(dungeon instanceof PBOFINALPROJECTHURA.internal.ForestDungeon) {
+            wallIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/forestWall.png");
+            floorIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/forestFloor.png");
+            playerIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/player.png");
+            exitIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/exitDungeon.png");
+        }else if(dungeon instanceof PBOFINALPROJECTHURA.internal.SwampDungeon){
+            wallIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/swampWall.png");
+            floorIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/swampFloor.png");
+            playerIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/player.png");
+            exitIcon =  new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/exitDungeon.png");
+        }else {
+            wallIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/volcanoWall.png");
+            floorIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/volcanoFloor.png");
+            playerIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/player.png");
+            exitIcon =  new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/exitDungeon.png");
+        }
     }
 
     protected void paintComponent() {
