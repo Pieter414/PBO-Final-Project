@@ -1,5 +1,6 @@
 package PBOFINALPROJECTHURA.internal.GUI;
 
+import PBOFINALPROJECTHURA.internal.Dungeon;
 import PBOFINALPROJECTHURA.internal.Player;
 
 import javax.swing.*;
@@ -7,6 +8,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class HomeBaseDisplay extends BaseLayer {
+    private BuyItemDisplay buyItemDisplay;
+    private DungeonPanel dungeonDisplay;
     private static final int ROWS = 10;
     private static final int COLUMNS = 10;
     private JButton[][] mapButtons = new JButton[ROWS][COLUMNS]; // JButton array for GUI
@@ -35,6 +38,9 @@ public class HomeBaseDisplay extends BaseLayer {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         this.player = player;
+
+//        buyItemDisplay = new BuyItemDisplay();
+//        buyItemDisplay.setPlayer(player);
 
         playerIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/player.png");
         mapImage = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/floor.png");
@@ -158,7 +164,10 @@ public class HomeBaseDisplay extends BaseLayer {
             JOptionPane.showMessageDialog(this, "Go to the Dungeon!");
         }
         else if (map[y][x] == 'T') {
-            JOptionPane.showMessageDialog(this, "Buy Item!");
+            buyItemDisplay = new BuyItemDisplay();
+            buyItemDisplay.setPlayer(player);
+            buyItemDisplay.setVisible(true);
+//            JOptionPane.showMessageDialog(this, "Buy Item!");
         }
         else if (map[y][x] == 'M') {
             JOptionPane.showMessageDialog(this, "Choose your monster!");
