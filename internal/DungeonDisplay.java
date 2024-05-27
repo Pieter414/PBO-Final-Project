@@ -1,3 +1,5 @@
+package PBOFINALPROJECTHURA.internal;
+
 import javax.swing.*;
 
 public class DungeonDisplay extends BaseLayer{

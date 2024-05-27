@@ -1,3 +1,5 @@
+package PBOFINALPROJECTHURA.internal;
+
 import java.util.*;
 
 public abstract class Dungeon {
