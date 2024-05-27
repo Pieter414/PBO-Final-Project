@@ -4,12 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class HomeBaseDisplay extends JFrame {
+public class HomeBaseDisplay extends BaseLayer {
     private static final int ROWS = 10;
     private static final int COLUMNS = 10;
     private JButton[][] mapButtons = new JButton[ROWS][COLUMNS]; // JButton array for GUI
     private char[][] map = {
-            {'#', '#', '#', '#', '#', 'X', '#', '#', '#', '#'},
+           {'#', '#', '#', '#', '#', 'X', '#', '#', '#', '#'},
             {'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
             {'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
             {'#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
@@ -26,13 +26,14 @@ public class HomeBaseDisplay extends JFrame {
     private ImageIcon mapImage;
 
     public HomeBaseDisplay() {
+        super(new JPanel(null)); // Mengatur layout ke null untuk mengatur posisi secara manual
         setTitle("Home Base");
         setSize(610, 657);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        playerIcon = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\player.jpg");
-        mapImage = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\baseLayer.jpg");
+        playerIcon = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\player.png");
+        mapImage = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\floor.png");
 
         GridPanel backgroundPanel = new GridPanel(mapImage);
         backgroundPanel.setLayout(null); // Use null layout for absolute positioning
@@ -54,7 +55,7 @@ public class HomeBaseDisplay extends JFrame {
     private void initializeGrid(JPanel panel) {
         wallIcon = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\bricks.png");  // Load the wall image
         pathIcon = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\floor.png");  // Load the path image
-        playerIcon = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\realPlayer.png");  // Load the player image
+        playerIcon = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\player.png");  // Load the player image
         exitIcon = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\hole.png");  // Load the exit image
         chooseMonsterIcon = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\pick.png");
         buyIcon = new ImageIcon("C:\\Users\\USER\\Desktop\\Asset PBO\\shop.jpg");
