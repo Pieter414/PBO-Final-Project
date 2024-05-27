@@ -2,10 +2,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.*;
 import java.util.List;
 
 public class DungeonTest {
+
+    private int[][] monsterFix = {{4, 1}, {4, 4}, {1, 8}, {9, 8}};
+    private boolean[] defeated;
+    private int[][] randomIndex = {{2, 2}, {3, 2}, {3, 3}, {3, 3}, {2, 3}, {1, 3}};
     private char[][] map;
     private int playerX;
     private int playerY;
@@ -17,8 +23,9 @@ public class DungeonTest {
         playerX = 1;       // Set initial player coordinates
         playerY = 9;
         this.player = player;
-        dungeonPanel = new DungeonPanel(map, playerX, playerY);  // This is now a JFrame
+        dungeonPanel = new DungeonPanel(this, map, playerX, playerY);  // This is now a JFrame
         dungeonPanel.setVisible(true); // Make the frame visible
+        this.defeated = new boolean[monsterFix.length];
 
         // You can still use controlPanel but consider how it's used since DungeonPanel is a separate window
         // Perhaps manage this panel within DungeonPanel or in another coordinating JFrame
@@ -54,7 +61,9 @@ public class DungeonTest {
         int newX = playerX + dx;
         int newY = playerY + dy;
         if (newX >= 0 && newX < map[0].length && newY >= 0 && newY < map.length && map[newY][newX] == ' ') {
-            if (isThereMonster(newY, newX)) {
+            int indexDefeated = findIndex(newX, newY);
+            if (indexDefeated != -1 && isThereMonster(newX, newX) && !defeated[indexDefeated]) {
+                defeated[findIndex(newX, newY)] = true;
                 Monster encounteredMonster = generateRandomMonster();
                 initiateBattle(encounteredMonster);
             } else {
@@ -67,6 +76,15 @@ public class DungeonTest {
         }
     }
 
+    private int findIndex(int x, int y){
+        for (int i = 0; i < monsterFix.length; i++){
+            if (monsterFix[i][0] == x && monsterFix[i][1] == y){
+                return i;
+            }
+        }
+        return -1;
+    }
+
 
     public void initiateBattle(Monster encounteredMonster) {
         // Assume you have some Player class available
@@ -77,9 +95,6 @@ public class DungeonTest {
     }
 
     public boolean isThereMonster(int i, int j) {
-        int[][] monsterFix = {{4, 1}, {4, 4}, {1, 8}, {9, 8}};
-        int[][] randomIndex = {{2, 2}, {3, 2}, {3, 3}, {3, 3}, {2, 3}, {1, 3}};
-
         java.util.List<int[]> list = new ArrayList<>(Arrays.asList(randomIndex));
         Collections.shuffle(list);
 
@@ -110,27 +125,26 @@ public class DungeonTest {
     }
 
     public Monster generateRandomMonster() {
-        final String[] MONSTER_NAMES = {"Golem", "Squirtle", "Charmander", "Glaceon", "Pidgey"};
+        final String[] MONSTER_NAMES = {"Fire Monster", "Water Monster", "Grass Monster", "Ground Monster", "Ice Monster"};
         final int MAX_LEVEL = 50;
         final int MAX_HP = 200;
 
         Random random = new Random();
 
-        String name = MONSTER_NAMES[random.nextInt(MONSTER_NAMES.length)];
         int level = random.nextInt(MAX_LEVEL) + 1;
         int maxHP = random.nextInt(MAX_HP) + 50; // HP antara 50 dan 250
 
         switch (random.nextInt(5)) {
             case 0:
-                return new GroundMonster(name, level, maxHP);
+                return new GroundMonster(MONSTER_NAMES[3], level, maxHP);
             case 1:
-                return new WaterMonster(name, level, maxHP);
+                return new WaterMonster(MONSTER_NAMES[1], level, maxHP);
             case 2:
-                return new FireMonster(name, level, maxHP);
+                return new FireMonster(MONSTER_NAMES[0], level, maxHP);
             case 3:
-                return new IcedMonster(name, level, maxHP);
+                return new IcedMonster(MONSTER_NAMES[4], level, maxHP);
             case 4:
-                return new GrassMonster(name, level, maxHP);
+                return new GrassMonster(MONSTER_NAMES[2], level, maxHP);
             default:
                 return null;
         }
@@ -143,14 +157,14 @@ public class DungeonTest {
     private void initializeMap() {
         map = new char[][]{
                 {'#', '#', '#', '#', '#', '#', '#', '#', '#', 'X'},
-                {'#', '#', '#', ' ', '#', '#', '#', '#', ' ', ' '},
-                {'#', '#', ' ', ' ', '#', '#', ' ', ' ', ' ', '#'},
-                {'#', '#', ' ', ' ', '#', ' ', ' ', ' ', ' ', '#'},
-                {'#', ' ', ' ', ' ', ' ', ' ', '#', ' ', '#', '#'},
-                {'#', ' ', '#', '#', '#', '#', '#', ' ', '#', '#'},
-                {'#', ' ', '#', '#', '#', '#', '#', ' ', '#', '#'},
-                {'#', ' ', '#', '#', '#', ' ', ' ', ' ', '#', '#'},
-                {'#', ' ', '#', '#', '#', ' ', ' ', ' ', '#', '#'},
+                {'#', '#', ' ', ' ', ' ', ' ', ' ', '#', '#', ' '},
+                {' ', '#', ' ', '#', '#', '#', ' ', ' ', ' ', ' '},
+                {' ', '#', ' ', '#', '#', '#', ' ', ' ', ' ', ' '},
+                {' ', '#', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' '},
+                {' ', '#', '#', '#', ' ', '#', '#', '#', '#', '#'},
+                {' ', '#', '#', '#', ' ', '#', ' ', ' ', ' ', '#'},
+                {' ', '#', '#', ' ', ' ', '#', ' ', '#', ' ', '#'},
+                {' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', '#'},
                 {'#', 'P', '#', '#', '#', '#', '#', '#', '#', '#'}
         };
     }
