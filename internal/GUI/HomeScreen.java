@@ -1,4 +1,6 @@
-package PBOFINALPROJECTHURA.internal;
+package PBOFINALPROJECTHURA.internal.GUI;
+
+import PBOFINALPROJECTHURA.internal.Player;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,4 +1,4 @@
-package PBOFINALPROJECTHURA.internal;
+package PBOFINALPROJECTHURA.internal.GUI;
 
 import javax.swing.*;
 

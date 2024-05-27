@@ -1,5 +1,7 @@
 package PBOFINALPROJECTHURA.internal;
 
+import PBOFINALPROJECTHURA.internal.GUI.DungeonPanel;
+
 import javax.swing.*;
 
 
