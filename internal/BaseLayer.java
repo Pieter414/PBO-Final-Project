@@ -27,7 +27,7 @@ public abstract class BaseLayer extends JFrame implements ActionListener {
             }
         });
 
-        setUpBackground("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\images\\backgroundBattle.jpg");
+        setUpBackground("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\images\\backgroundBattle.jpg", "battleArena");
 
         setTitle("Area");
         setSize(787, 480);
@@ -69,7 +69,7 @@ public abstract class BaseLayer extends JFrame implements ActionListener {
         return new ImageIcon(resizedImage);
     }
 
-    public void setUpBackground(String filepath) {
+    public void setUpBackground(String filepath, String detail) {
         if (backgroundPanel != null) {
             remove(backgroundPanel); // Remove old background panel if exists
         }
@@ -77,7 +77,7 @@ public abstract class BaseLayer extends JFrame implements ActionListener {
         Image image = backgroundIcon.getImage();
 
         // Create the custom panel with the background image
-        backgroundPanel = new BackgroundPanel(image);
+        backgroundPanel = new BackgroundPanel(image, detail);
         backgroundPanel.setLayout(null);
 
         // Add the background panel to the specified panel
