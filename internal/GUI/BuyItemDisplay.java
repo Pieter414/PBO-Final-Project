@@ -22,9 +22,10 @@ public class BuyItemDisplay extends BaseLayer implements ActionListener {
         panel = (JPanel) getContentPane();
         setTitle("Game Shop");
         setSize(960, 590);
+        setPlayer(player);
 
         panel.setLayout(null);
-        setUpBackground("src/PBOFINALPROJECTHURA/assets/images/gameshop1.jpg", "homeBase");
+        setUpBackground("src/PBOFINALPROJECTHURA/assets/images/gameshop1.jpg", "gameShop");
         setUpButton();
         setUpGoldLabel();
 
@@ -96,25 +97,25 @@ public class BuyItemDisplay extends BaseLayer implements ActionListener {
                 int itemCost = 100;
                 decreaseGold(itemCost);
                 Item xAttack = new XItem(50, "x attack");  // Assuming '50' is the bonus given
-                player.addItem(xAttack);
+                player.getListXAttack().add(xAttack);
                 System.out.println("Xattack item purchased");
             } else if (e.getSource() == XdefenseButton) {
                 int itemCost = 100;
                 decreaseGold(itemCost);
                 Item xDefense = new XItem(50, "x defense");  // Similarly, assuming '50' is the bonus given
-                player.addItem(xDefense);
+                player.getListXDefense().add(xDefense);
                 System.out.println("Xdefense item purchased");
             } else if (e.getSource() == potionButton) {
                 int itemCost = 150;
                 decreaseGold(itemCost);
                 Item potion = new Potion(50, "potion");  // Assuming '50' is the health given
-                player.addItem(potion);
+                player.getListPotion().add(potion);
                 System.out.println("Potion item purchased");
             } else if (e.getSource() == superPotionButton) {
                 int itemCost = 250;
                 decreaseGold(itemCost);
                 Item superPotion = new Potion(200, "super potion");  // Assuming '200' is the health given
-                player.addItem(superPotion);
+                player.getListSuperPotion().add(superPotion);
                 System.out.println("Super Potion item purchased");
             }
         } catch (MoneyException exception) {
@@ -134,13 +135,8 @@ public class BuyItemDisplay extends BaseLayer implements ActionListener {
 
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
             Player player = new Player("PlayerName"); // Create a new player
             BuyItemDisplay bs = new BuyItemDisplay(player);
-            bs.setPlayer(player);  // Set the player
-            bs.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            bs.setVisible(true);
-        });
     }
 
 }

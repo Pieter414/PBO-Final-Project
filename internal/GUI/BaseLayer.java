@@ -27,6 +27,7 @@ public abstract class BaseLayer extends JFrame implements ActionListener {
             @Override
             public void windowClosing(WindowEvent e) {
                 if (canExit) {
+                    GameManager.saveGameProgress(player);
                     dispose();
                 } else {
                     showSaveErrorMessage();
