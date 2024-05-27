@@ -18,6 +18,10 @@ public class HomeBase {
         return monster;
     }
 
+    public void setListMonster(ArrayList<Monster> listMonster) {
+        this.listMonster = listMonster;
+    }
+
     public void upgradeLevel(Monster monster) {
         // Implementasi untuk meningkatkan level monster
         monster.setLevel(monster.getLevel() + 1);
