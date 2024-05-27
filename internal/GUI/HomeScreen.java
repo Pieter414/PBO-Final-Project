@@ -80,6 +80,7 @@ public class HomeScreen extends BaseLayer implements ActionListener {
         else{
             System.out.println("game starting");
             dispose();
+            Homebase hb = new Homebase(player);
         }
     }
 

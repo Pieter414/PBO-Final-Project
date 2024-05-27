@@ -5,8 +5,9 @@ import java.util.ArrayList;
 class Homebase {
     private ArrayList<Monster> listMonster;
 
-    public Homebase() {
+    public Homebase(Player player) {
         listMonster = new ArrayList<>();
+        HomeBaseDisplay hbd = new HomeBaseDisplay(player);
     }
 
     public Monster changeElement(Monster monster, String newElement) {

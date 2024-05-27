@@ -159,7 +159,7 @@ public class Player implements Serializable {
         }
     }
 
-    public void handleException(PokemonException e) {
+    public void handleException(MonsterException e) {
         // Implementasi penanganan exception
         System.err.println("Terjadi kesalahan: " + e.getMessage());
     }

@@ -51,4 +51,8 @@ public class BattleArena {
     public void handleException(){
 
     }
+
+    public void onFinish(Runnable callback) {
+        callback.run();
+    }
 }
