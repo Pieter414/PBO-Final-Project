@@ -1,5 +1,8 @@
 package PBOFINALPROJECTHURA.internal.GUI;
 
+import PBOFINALPROJECTHURA.internal.GameManager;
+import PBOFINALPROJECTHURA.internal.Player;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -14,14 +17,17 @@ public abstract class BaseLayer extends JFrame implements ActionListener {
     private ImageIcon exitIcon;
     private boolean canExit = false;
     private JPanel interfaceUtamaPanel;
+    private Player player;
 
-    public BaseLayer(JPanel interfaceUtamaPanel) {
+    public BaseLayer(JPanel interfaceUtamaPanel, Player player) {
+        this.player = player;
         setUpMenuBar();
         setContentPane(interfaceUtamaPanel);
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 if (canExit) {
+                    GameManager.saveGameProgress(player);
                     dispose();
                 } else {
                     showSaveErrorMessage();
@@ -96,6 +102,7 @@ public abstract class BaseLayer extends JFrame implements ActionListener {
             if (!canExit) {
                 showSaveErrorMessage();
             } else {
+                GameManager.saveGameProgress(player);
                 dispose();
             }
         }

@@ -14,25 +14,8 @@ public class HomeScreen extends BaseLayer implements ActionListener {
     private JPanel panel;
     private Player player;
 
-    public HomeScreen() {
-        super(new JPanel(null));
-        panel = (JPanel) getContentPane();
-        setTitle("Home Screen");
-        setSize(960, 590);
-
-        panel.setLayout(null);
-        setUpBackground("src/PBOFINALPROJECTHURA/assets/images/homeScreenBackground.jpg", "homeScreen");
-        initializeActionListeners();
-        setUpPokemonTitle();
-        setUpButton();
-        this.player = new Player("PLACEHOLDERNAMEFORAWHILE123456789");
-
-        revalidate();
-        repaint();
-    }
-
     public HomeScreen(Player player) {
-        super(new JPanel(null));
+        super(new JPanel(null), player);
         panel = (JPanel) getContentPane();
         setTitle("Home Screen");
         setSize(960, 590);

@@ -5,7 +5,6 @@ import PBOFINALPROJECTHURA.internal.GUI.DungeonPanel;
 import javax.swing.*;
 
 
-
 public class TestClassMainDungeon {
     public static void main(String[] args) {
         Player p = new Player("Pieter");
