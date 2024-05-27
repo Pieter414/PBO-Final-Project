@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class BuyItemDisplay extends BaseLayer implements ActionListener {
-    private JButton XattackButton, XdefenseButton, potionButton, superPotionButton, goldButton;
+    private JButton XattackButton, XdefenseButton, potionButton, superPotionButton, backButton;
     private JPanel panel;
     private JLabel goldLabel;
     private int goldAmount = 1000;
@@ -42,11 +42,12 @@ public class BuyItemDisplay extends BaseLayer implements ActionListener {
         XdefenseButton = createButton("Xdefense", 580, 210, 125, 125, "src/PBOFINALPROJECTHURA/assets/images/xdefense.png", this);
         potionButton = createButton("Potion", 240, 380, 125, 125, "src/PBOFINALPROJECTHURA/assets/images/potion.png", this);
         superPotionButton = createButton("Super Potion", 580, 380, 125, 125, "src/PBOFINALPROJECTHURA/assets/images/superPotion.png", this);
+        backButton = createButton(" ", 10, 10, 50, 50, "src/PBOFINALPROJECTHURA/assets/images/saveIcon.png", this);
     }
 
     private void setUpGoldLabel() {
         goldLabel = new JLabel();
-        goldLabel.setBounds(10, 10, 150, 55);
+        goldLabel.setBounds(785, 8, 150, 55);
         goldLabel.setHorizontalAlignment(SwingConstants.CENTER);
         ImageIcon goldIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/gold.png"); // Use the uploaded image path
         if (goldIcon.getIconWidth() == -1) {
