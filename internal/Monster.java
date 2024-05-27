@@ -200,8 +200,8 @@ class GroundMonster extends Monster{
         this.setHP(maxHP);
         this.setEP(0);
         this.setColor(new Color(228, 197, 158));
-        this.setPathFileFront("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\monster\\ground_front.gif");
-        this.setpathFileBack("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\monster\\ground_back.gif");
+        this.setPathFileFront("src/PBOFINALPROJECTHURA/assets/monster/ground_front.gif");
+        this.setpathFileBack("src/PBOFINALPROJECTHURA/assets/monster/ground_back.gif");
     }
 
     public double typeEffectiveness(String elementPlayer, String elementEnemy){
@@ -279,8 +279,8 @@ class WaterMonster extends Monster {
         this.setHP(maxHP);
         this.setEP(0);
         this.setColor(new Color(90, 178, 255));
-        this.setPathFileFront("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\monster\\water_front.gif");
-        this.setpathFileBack("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\monster\\water_back.gif");
+        this.setPathFileFront("src/PBOFINALPROJECTHURA/assets/monster/water_front.gif");
+        this.setpathFileBack("src/PBOFINALPROJECTHURA/assets/monster/water_back.gif");
     }
 
     public double typeEffectiveness(String elementPlayer, String elementEnemy) {
@@ -358,8 +358,8 @@ class FireMonster extends Monster {
         this.setHP(maxHP);
         this.setEP(0);
         this.setColor(new Color(250, 112, 112));
-        this.setPathFileFront("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\monster\\fire_front.gif");
-        this.setpathFileBack("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\monster\\fire_back.gif");
+        this.setPathFileFront("src/PBOFINALPROJECTHURA/assets/monster/fire_front.gif");
+        this.setpathFileBack("src/PBOFINALPROJECTHURA/assets/monster/fire_back.gif");
     }
 
     public double typeEffectiveness(String elementPlayer, String elementEnemy) {
@@ -437,8 +437,8 @@ class IcedMonster extends Monster {
         this.setHP(maxHP);
         this.setEP(0);
         this.setColor(new Color(202,244,255));
-        this.setPathFileFront("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\monster\\ice_front.gif");
-        this.setpathFileBack("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\monster\\ice_back.gif");
+        this.setPathFileFront("src/PBOFINALPROJECTHURA/assets/monster/ice_front.gif");
+        this.setpathFileBack("src/PBOFINALPROJECTHURA/assets/monster/ice_back.gif");
     }
 
     public double typeEffectiveness(String elementPlayer, String elementEnemy) {
@@ -516,8 +516,8 @@ class GrassMonster extends Monster {
         this.setHP(maxHP);
         this.setEP(0);
         this.setColor(new Color(195, 255, 147));
-        this.setPathFileFront("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\monster\\grass_front.gif");
-        this.setpathFileBack("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\monster\\grass_back.gif");
+        this.setPathFileFront("src/PBOFINALPROJECTHURA/assets/monster/grass_front.gif");
+        this.setpathFileBack("src/PBOFINALPROJECTHURA/assets/monster/grass_back.gif");
     }
 
     public double typeEffectiveness(String elementPlayer, String elementEnemy) {
