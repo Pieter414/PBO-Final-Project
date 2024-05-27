@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class GameManager {
 
-    public static void saveGameProgress(Player player, int healthPotionCount, Homebase homebase) {
+    public static void saveGameProgress(Player player, int healthPotionCount, HomeBase homebase) {
         try (PrintWriter writer = new PrintWriter(new FileWriter("game_progress.txt"))) {
             writer.println(player.getName());
             writer.println(player.getMoney());
@@ -37,7 +37,7 @@ public class GameManager {
         }
     }
 
-    public static Player loadGameProgress(Homebase homebase, JTextArea textArea, JLabel healthPotionLabel, JLabel moneyLabel) {
+    public static Player loadGameProgress(HomeBase homebase, JTextArea textArea, JLabel healthPotionLabel, JLabel moneyLabel) {
         Player player = null;
         int healthPotionCount = 0;
 
