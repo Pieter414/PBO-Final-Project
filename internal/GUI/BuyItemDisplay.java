@@ -1,7 +1,5 @@
 package PBOFINALPROJECTHURA.internal.GUI;
 
-import PBOFINALPROJECTHURA.internal.Player;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,8 +8,6 @@ import java.awt.event.ActionListener;
 public class BuyItemDisplay extends BaseLayer implements ActionListener {
     private JButton XattackButton, XdefenseButton, potionButton, superPotionButton;
     private JPanel panel;
-    private Player player;
-    private ImageIcon Xattack, Xdefense, potion, superPotion;
 
     public BuyItemDisplay() {
         super(new JPanel(null));
