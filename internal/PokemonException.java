@@ -1,3 +1,4 @@
+package PBOFINALPROJECTHURA.internal;
 
 public class PokemonException extends Exception {
     public PokemonException() {

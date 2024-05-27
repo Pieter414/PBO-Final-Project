@@ -1,3 +1,5 @@
+package PBOFINALPROJECTHURA.internal;
+
 public interface Battle {
     int basicAttack(Monster player, Monster enemy);
     int specialAttack(Monster player, Monster enemy);

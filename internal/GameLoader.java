@@ -1,3 +1,5 @@
+package PBOFINALPROJECTHURA.internal;
+
 import java.io.*;
 
 public class GameLoader {

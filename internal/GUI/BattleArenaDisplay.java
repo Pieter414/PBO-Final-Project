@@ -1,3 +1,10 @@
+package PBOFINALPROJECTHURA.internal.GUI;
+
+import PBOFINALPROJECTHURA.internal.Item;
+import PBOFINALPROJECTHURA.internal.Monster;
+import PBOFINALPROJECTHURA.internal.MonsterDetailBox;
+import PBOFINALPROJECTHURA.internal.Player;
+
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.io.File;

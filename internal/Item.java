@@ -1,3 +1,5 @@
+package PBOFINALPROJECTHURA.internal;
+
 public abstract class Item {
     private String sifat;
 

@@ -1,3 +1,7 @@
+package PBOFINALPROJECTHURA.internal.GUI;
+
+import PBOFINALPROJECTHURA.internal.Player;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -16,7 +20,7 @@ public class HomeScreen extends BaseLayer implements ActionListener {
         setSize(960, 590);
 
         panel.setLayout(null);
-        setUpBackground("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\images\\homeScreenBackground.jpg");
+        setUpBackground("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\images\\homeScreenBackground.jpg", "homeScreen");
         initializeActionListeners();
         setUpPokemonTitle();
         setUpButton();
@@ -33,7 +37,7 @@ public class HomeScreen extends BaseLayer implements ActionListener {
         setSize(960, 590);
 
         panel.setLayout(null);
-        setUpBackground("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\images\\homeScreenBackground.jpg");
+        setUpBackground("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\images\\homeScreenBackground.jpg", "homeScreen");
         initializeActionListeners();
         setUpPokemonTitle();
         setUpButton();
@@ -47,14 +51,14 @@ public class HomeScreen extends BaseLayer implements ActionListener {
         ImageIcon logoIcon = new ImageIcon("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\images\\monsterLogo.png");
         logoLabel = new JLabel(logoIcon);
         logoLabel.setLayout(null); // Use null layout to manually position buttons
-        logoLabel.setBounds(10, 10, logoIcon.getIconWidth(), logoIcon.getIconHeight());
+        logoLabel.setBounds(50, 40, logoIcon.getIconWidth(), logoIcon.getIconHeight());
         getContentPane().add(logoLabel);
     }
 
     private void setUpButton(){
-        startButton = createButton("Start", 90, 400, 100, 25, Color.LIGHT_GRAY, startButtonAction);
-        editButton = createButton("Edit", 200, 400, 100, 25, Color.LIGHT_GRAY, editButtonAction);
-        exitButton = createButton("Exit", 310, 400, 100, 25, Color.LIGHT_GRAY, exitButtonAction);
+        startButton = createButton("Start", 70, 300, 300, 30, Color.LIGHT_GRAY, startButtonAction);
+        editButton = createButton("Edit", 70, 350, 300, 30, Color.LIGHT_GRAY, editButtonAction);
+        exitButton = createButton("Exit", 70, 400, 300, 30, Color.LIGHT_GRAY, exitButtonAction);
     }
 
     private JButton createButton(String text, int x, int y, int width, int height, Color background, ActionListener action) {

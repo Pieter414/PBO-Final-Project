@@ -1,3 +1,7 @@
+package PBOFINALPROJECTHURA.internal;
+
+import PBOFINALPROJECTHURA.internal.GUI.BattleArenaDisplay;
+
 public class BattleArena {
     Monster monster;
     Monster enemy;

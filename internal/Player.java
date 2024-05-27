@@ -1,3 +1,5 @@
+package PBOFINALPROJECTHURA.internal;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
