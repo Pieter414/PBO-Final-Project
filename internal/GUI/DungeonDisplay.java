@@ -1,13 +1,16 @@
 package PBOFINALPROJECTHURA.internal.GUI;
 
+import PBOFINALPROJECTHURA.internal.Player;
+
 import javax.swing.*;
 
 public class DungeonDisplay extends BaseLayer{
     private JPanel panel;
+    private Player player;
     int x, y;
 
-    public DungeonDisplay() {
-        super(new JPanel(null)); // Mengatur layout ke null untuk mengatur posisi secara manual
+    public DungeonDisplay(Player player) {
+        super(new JPanel(null), player); // Mengatur layout ke null untuk mengatur posisi secara manual
         panel = (JPanel) getContentPane();
 
         panel.setLayout(null);

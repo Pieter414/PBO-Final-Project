@@ -29,7 +29,7 @@ public class HomeBaseDisplay extends BaseLayer {
     private ImageIcon mapImage;
 
     public HomeBaseDisplay(Player player) {
-        super(new JPanel(null)); // Mengatur layout ke null untuk mengatur posisi secara manual
+        super(new JPanel(null), player); // Mengatur layout ke null untuk mengatur posisi secara manual
         setTitle("Home Base");
         setSize(610, 657);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

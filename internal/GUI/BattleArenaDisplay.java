@@ -26,7 +26,7 @@ public class BattleArenaDisplay extends BaseLayer implements ActionListener {
     private boolean battleTrainer;
 
     public BattleArenaDisplay(Player player, Monster enemyMonster, boolean battleTrainer) {
-        super(new JPanel(null)); // Mengatur layout ke null untuk mengatur posisi secara manual
+        super(new JPanel(null), player); // Mengatur layout ke null untuk mengatur posisi secara manual
         panel1 = (JPanel) getContentPane();
         setTitle("Battle Arena");
 

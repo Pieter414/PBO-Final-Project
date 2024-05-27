@@ -23,7 +23,7 @@ public class DungeonTest {
         playerX = 1;       // Set initial player coordinates
         playerY = 9;
         this.player = player;
-        dungeonPanel = new DungeonPanel(this, map, playerX, playerY);  // This is now a JFrame
+        dungeonPanel = new DungeonPanel(this, map, playerX, playerY, player);  // This is now a JFrame
         dungeonPanel.setVisible(true); // Make the frame visible
         this.defeated = new boolean[monsterFix.length];
 

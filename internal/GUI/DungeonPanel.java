@@ -1,6 +1,7 @@
 package PBOFINALPROJECTHURA.internal.GUI;
 
 import PBOFINALPROJECTHURA.internal.DungeonTest;
+import PBOFINALPROJECTHURA.internal.Player;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,9 +18,10 @@ public class DungeonPanel extends BaseLayer {
     private ImageIcon exitIcon;
     private DungeonTest dungeon;
     private boolean canMove = true;  // Flag to control player movement
+    private Player player;
 
-    public DungeonPanel(DungeonTest dungeon, char[][] map, int playerX, int playerY) {
-        super(new JPanel(null)); // Using the constructor of BaseLayer that expects a JPanel
+    public DungeonPanel(DungeonTest dungeon, char[][] map, int playerX, int playerY, Player player) {
+        super(new JPanel(null), player); // Using the constructor of BaseLayer that expects a JPanel
         setUpBackground("", "dungeon");
         setTitle("Dungeon Game"); // Set the title of the JFrame
         setSize(517, 563); // Set the size of the JFrame
@@ -27,6 +29,7 @@ public class DungeonPanel extends BaseLayer {
         this.map = map;
         this.playerX = playerX;
         this.playerY = playerY;
+        this.player = player;
         loadIcons();
 
         setFocusable(true);  // Memungkinkan panel menerima fokus
