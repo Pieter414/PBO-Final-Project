@@ -34,11 +34,11 @@ public class TestClassMainDungeon {
 
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Dungeon");
-            Dungeon dungeon = new Dungeon(p);
-            Dungeon forestDungeon = new ForestDungeon(p);
+//            Dungeon dungeon = new Dungeon(p);
+//            Dungeon forestDungeon = new ForestDungeon(p);
             Dungeon volcanoDungeon = new VolcanoDungeon(p);
-            Dungeon swampDungeon = new SwampDungeon(p);
-            DungeonPanel dungeonPanel = forestDungeon.getDungeonPanel();
+//            Dungeon swampDungeon = new SwampDungeon(p);
+//            DungeonPanel dungeonPanel = forestDungeon.getDungeonPanel();
 
         });
     }

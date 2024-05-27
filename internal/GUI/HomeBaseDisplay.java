@@ -1,5 +1,6 @@
 package PBOFINALPROJECTHURA.internal.GUI;
 
+import PBOFINALPROJECTHURA.internal.Dungeon;
 import PBOFINALPROJECTHURA.internal.Player;
 
 import javax.swing.*;
@@ -8,7 +9,7 @@ import java.awt.event.*;
 
 public class HomeBaseDisplay extends BaseLayer {
     private BuyItemDisplay buyItemDisplay;
-    private DungeonDisplay dungeonDisplay;
+    private DungeonPanel dungeonDisplay;
     private static final int ROWS = 10;
     private static final int COLUMNS = 10;
     private JButton[][] mapButtons = new JButton[ROWS][COLUMNS]; // JButton array for GUI
