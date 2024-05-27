@@ -79,10 +79,10 @@ public class DungeonPanel extends BaseLayer {
     }
 
     private void loadIcons() {
-        wallIcon = new ImageIcon("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\dungeon\\wallIcon.png");
-        floorIcon = new ImageIcon("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\dungeon\\floorIcon.png");
-        playerIcon = new ImageIcon("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\dungeon\\playerIcon.png");
-        exitIcon =  new ImageIcon("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\dungeon\\exitIcon.png");
+        wallIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/bricks.png");
+        floorIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/floor.png");
+        playerIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/player.png");
+        exitIcon =  new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/exitIcon.png");
     }
 
     protected void paintComponent() {

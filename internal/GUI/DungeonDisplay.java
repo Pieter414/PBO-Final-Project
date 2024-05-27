@@ -12,7 +12,7 @@ public class DungeonDisplay extends BaseLayer{
 
         panel.setLayout(null);
         setSize(500, 1000);
-        setUpBackground("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\images\\grid 10x10.png", "dungeon");
+        setUpBackground("src/PBOFINALPROJECTHURA/assets/images/grid 10x10.png", "dungeon");
         initializeActionListeners();
 
         panel.revalidate();

@@ -29,7 +29,7 @@ public abstract class BaseLayer extends JFrame implements ActionListener {
             }
         });
 
-        setUpBackground("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\images\\backgroundBattle.jpg", "battleArena");
+        setUpBackground("src/PBOFINALPROJECTHURA/assets/images/backgroundBattle.jpg", "battleArena");
 
         setTitle("Area");
         setSize(787, 480);
@@ -44,8 +44,8 @@ public abstract class BaseLayer extends JFrame implements ActionListener {
         saveItem = new JMenuItem("Save");
         exitItem = new JMenuItem("Exit");
 
-        saveIcon = setUpIcon(new ImageIcon("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\images\\saveIcon.png"), 20, 20);
-        exitIcon = setUpIcon(new ImageIcon("D:\\Intellij\\PBO\\PBOFinalProject\\assets\\images\\exitIcon.png"), 20, 20);
+        saveIcon = setUpIcon(new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/saveIcon.png"), 20, 20);
+        exitIcon = setUpIcon(new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/exitIcon.png"), 20, 20);
 
         saveItem.addActionListener(this);
         exitItem.addActionListener(this);
