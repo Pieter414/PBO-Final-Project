@@ -1,5 +1,5 @@
-# Game Name - Update 1.1
-Welcome to the latest update for *Monster Game*! This update brings a variety of enhancements, new features, and bug fixes to improve your gaming experience.
+# Monster Game Project - Update 1.1 🤩
+This project is the final project assignment for our Object-Oriented Programming class at Brawijaya University. We are tasked to develop a game reminiscent of Pokémon, which replicates the battle systems and arenas, using Java Swing GUI and applying the concepts we've learned throughout the class.
 
 ## Latest Release Date
 May 29, 2024
