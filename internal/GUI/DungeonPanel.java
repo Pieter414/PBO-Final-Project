@@ -32,8 +32,8 @@ public class DungeonPanel extends BaseLayer {
         this.player = player;
         loadIcons();
 
-        setFocusable(true);  // Memungkinkan panel menerima fokus
-        requestFocusInWindow();  // Meminta fokus input
+        setFocusable(true);
+        requestFocusInWindow();
 
         addKeyListener(new KeyAdapter() {
             @Override
@@ -100,7 +100,7 @@ public class DungeonPanel extends BaseLayer {
         }
     }
 
-    protected void paintComponent() {
+    protected void drawMap() {
         Graphics g = getContentPane().getGraphics();
         Graphics2D g2d = (Graphics2D) g;
         int tileSize = getWidth() / map.length;
@@ -133,6 +133,6 @@ public class DungeonPanel extends BaseLayer {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        paintComponent(); // Delegate to paintComponent for custom painting
+        drawMap();
     }
 }

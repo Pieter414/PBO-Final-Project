@@ -37,16 +37,16 @@ public class BuyItemDisplay extends BaseLayer implements ActionListener {
 
 
     private void setUpButton() {
-        XattackButton = createButton("Xattack", 240, 210, 125, 125, "src/PBOFINALPROJECTHURA/assets/images/xattack.png", this);
-        XdefenseButton = createButton("Xdefense", 580, 210, 125, 125, "src/PBOFINALPROJECTHURA/assets/images/xdefense.png", this);
+        XattackButton = createButton("X Attack", 240, 210, 125, 125, "src/PBOFINALPROJECTHURA/assets/images/xattack.png", this);
+        XdefenseButton = createButton("X Defense", 580, 210, 125, 125, "src/PBOFINALPROJECTHURA/assets/images/xdefense.png", this);
         potionButton = createButton("Potion", 240, 380, 125, 125, "src/PBOFINALPROJECTHURA/assets/images/potion.png", this);
         superPotionButton = createButton("Super Potion", 580, 380, 125, 125, "src/PBOFINALPROJECTHURA/assets/images/superPotion.png", this);
-        backButton = createButton(" ", 10, 10, 50, 50, "src/PBOFINALPROJECTHURA/assets/images/saveIcon.png", this);
+        backButton = createButton("Exit", 10, 10, 80, 50, "src/PBOFINALPROJECTHURA/assets/images/exit.png", this);
     }
 
     private void setUpGoldLabel() {
         goldLabel = new JLabel();
-        goldLabel.setBounds(785, 8, 150, 55);
+        goldLabel.setBounds(750, 15, 200, 55);
         goldLabel.setHorizontalAlignment(SwingConstants.CENTER);
         ImageIcon goldIcon = new ImageIcon("src/PBOFINALPROJECTHURA/assets/images/gold.png"); // Use the uploaded image path
         if (goldIcon.getIconWidth() == -1) {
@@ -55,8 +55,10 @@ public class BuyItemDisplay extends BaseLayer implements ActionListener {
             goldLabel.setIcon(goldIcon);
             goldLabel.setIconTextGap(5);  // Adds a gap between icon and text
         }
-        goldLabel.setText("Gold:" + goldAmount);
+        goldLabel.setText("Gold: " + goldAmount);
         goldLabel.setFont(new Font("Arial", Font.BOLD, 12));
+        goldLabel.setForeground(Color.BLACK);
+        goldLabel.setForeground(Color.WHITE);
         getContentPane().add(goldLabel);
     }
 
@@ -90,19 +92,20 @@ public class BuyItemDisplay extends BaseLayer implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        super.actionPerformed(e);
         try {
             if (e.getSource() == XattackButton) {
                 int itemCost = 100;
                 decreaseGold(itemCost);
                 Item xAttack = new XItem(50, "x attack");  // Assuming '50' is the bonus given
                 player.getListXAttack().add(xAttack);
-                System.out.println("Xattack item purchased");
+                System.out.println("X attack item purchased");
             } else if (e.getSource() == XdefenseButton) {
                 int itemCost = 100;
                 decreaseGold(itemCost);
                 Item xDefense = new XItem(50, "x defense");  // Similarly, assuming '50' is the bonus given
                 player.getListXDefense().add(xDefense);
-                System.out.println("Xdefense item purchased");
+                System.out.println("X defense item purchased");
             } else if (e.getSource() == potionButton) {
                 int itemCost = 150;
                 decreaseGold(itemCost);
@@ -115,13 +118,14 @@ public class BuyItemDisplay extends BaseLayer implements ActionListener {
                 Item superPotion = new Potion(200, "super potion");  // Assuming '200' is the health given
                 player.getListSuperPotion().add(superPotion);
                 System.out.println("Super Potion item purchased");
+            } else if (e.getSource() == backButton){
+                GameManager.saveGameProgress(player);
+                dispose();
             }
         } catch (MoneyException exception) {
             JOptionPane.showMessageDialog(this, exception.getMessage(), "Purchase Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-
-
 
     private void decreaseGold(int amount) throws MoneyException {
         if (goldAmount < amount) {
@@ -130,5 +134,4 @@ public class BuyItemDisplay extends BaseLayer implements ActionListener {
         goldAmount -= amount;
         goldLabel.setText("Gold: " + goldAmount);
     }
-
 }

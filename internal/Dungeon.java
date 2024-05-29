@@ -35,23 +35,25 @@ public class Dungeon {
     public void movePlayer(int dx, int dy) {
         int newX = playerX + dx;
         int newY = playerY + dy;
-        if (newX >= 0 && newX < map[0].length && newY >= 0 && newY < map.length && map[newY][newX] == ' ') {
-            int indexDefeated = findIndex(newX, newY);
-            if (indexDefeated != -1 && isThereMonster(newX, newX) && !defeated[indexDefeated]) {
-                defeated[findIndex(newX, newY)] = true;
-                Monster encounteredMonster = generateRandomMonster();
-                initiateBattle(encounteredMonster);
-            } else {
-                map[playerY][playerX] = ' '; // Clear the old player position
-                playerX = newX; // Update player's X position
-                playerY = newY; // Update player's Y position
-                map[playerY][playerX] = 'P'; // Set the new player position
-                dungeonPanel.repaint(); // Request the panel to repaint
+        if (newX >= 0 && newX < map[0].length && newY >= 0 && newY < map.length) {
+            if (map[newY][newX] == 'X'){
+                dungeonPanel.dispose();
+                HomeBase hb = new HomeBase(player);
             }
-        }
-        else if (newX >= 0 && newX < map[0].length && newY >= 0 && newY < map.length && map[newY][newX] == 'X'){
-            dungeonPanel.dispose();
-            HomeBase hb = new HomeBase(player);
+            else if (map[newY][newX] == ' '){
+                int indexDefeated = findIndex(newX, newY);
+                if (indexDefeated != -1 && isThereMonster(newX, newX) && !defeated[indexDefeated]) {
+                    defeated[findIndex(newX, newY)] = true;
+                    Monster encounteredMonster = generateRandomMonster();
+                    initiateBattle(encounteredMonster);
+                } else {
+                    map[playerY][playerX] = ' '; // Clear the old player position
+                    playerX = newX; // Update player's X position
+                    playerY = newY; // Update player's Y position
+                    map[playerY][playerX] = 'P'; // Set the new player position
+                    dungeonPanel.repaint(); // Request the panel to repaint
+                }
+            }
         }
     }
 
@@ -75,34 +77,55 @@ public class Dungeon {
         });
     }
 
-    public boolean isThereMonster(int i, int j) {
-        java.util.List<int[]> list = new ArrayList<>(Arrays.asList(randomIndex));
-        Collections.shuffle(list);
+//    public boolean isThereMonster(int i, int j) {
+//        List<int[]> list = new ArrayList<>(Arrays.asList(randomIndex));
+//        Collections.shuffle(list);
+//
+//        Set<String> uniqueElementsSet = new HashSet<>();
+//        java.util.List<int[]> resultList = new ArrayList<>();
+//
+//        for (int[] element : list) {
+//            String elementString = Arrays.toString(element);
+//            if (!uniqueElementsSet.contains(elementString)) {
+//                uniqueElementsSet.add(elementString);
+//                resultList.add(element);
+//                if (resultList.size() == 3) {
+//                    break;
+//                }
+//            }
+//        }
+//
+//        List<int[]> listFix = new ArrayList<>(Arrays.asList(monsterFix));
+//        resultList.addAll(listFix);
+//
+//        int[][] result = resultList.toArray(new int[resultList.size()][2]);
+//
+//        for (int k = 0; k < result.length; k++) {
+//            if (result[k][0] == i && result[k][1] == j) {
+//                return true;
+//            }
+//        }
+//
+//        return false;
+//    }
 
-        Set<String> uniqueElementsSet = new HashSet<>();
-        java.util.List<int[]> resultList = new ArrayList<>();
-
-        for (int[] element : list) {
-            String elementString = Arrays.toString(element);
-            if (!uniqueElementsSet.contains(elementString)) {
-                uniqueElementsSet.add(elementString);
-                resultList.add(element);
-                if (resultList.size() == 3) {
-                    break;
-                }
+    public boolean isThereMonster(int x, int y) {
+        // Check fixed monster locations first
+        for (int[] location : monsterFix) {
+            if (location[0] == x && location[1] == y) {
+                return true;  // Monster is at this location
             }
         }
-        List<int[]> listFix = new ArrayList<>(Arrays.asList(monsterFix));
-        resultList.addAll(listFix);
 
-        int[][] result = resultList.toArray(new int[7][2]);
-
-        for (int k = 0; k < result.length; k++) {
-            if (result[k][0] == i && result[k][1] == j) {
+        for (int[] location : randomIndex) {
+            Random random = new Random();
+            boolean randomCheck = (random.nextInt(1, 24) % 4 == 0);
+            if (location[0] == x && location[1] == y && randomCheck) {
                 return true;
             }
         }
-        return false;
+
+        return false;  // No monster at this location
     }
 
     public Monster generateRandomMonster() {

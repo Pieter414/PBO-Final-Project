@@ -191,8 +191,6 @@ public class HomeBaseDisplay extends BaseLayer {
         }
         else if (map[y][x] == 'T') {
             buyItemDisplay = new BuyItemDisplay(player);
-            buyItemDisplay.setVisible(true);
-            buyItemDisplay.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //            JOptionPane.showMessageDialog(this, "Buy Item!");
         }
         else if (map[y][x] == 'M') {
@@ -220,10 +218,6 @@ public class HomeBaseDisplay extends BaseLayer {
             super.paintComponent(g);
             g.drawImage(mapImage.getImage(), 0, 0, getWidth(), getHeight(), this);
         }
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new HomeBaseDisplay(new Player("")).setVisible(true));
     }
 }
 

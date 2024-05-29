@@ -1,22 +1,49 @@
 Pieter
-8000
+11000
 3
 Fire Monster
-158
-3160
-300
+97
+1873
+400
 Fire
-Ice Monster
-153
-3060
-0
-Ice
-Grass Monster
-151
-3020
+Water Monster
 100
+2000
+500
+Water
+Grass Monster
+95
+1163
+900
 Grass
-0
-0
-0
-0
+9
+potion
+potion
+potion
+potion
+potion
+potion
+potion
+potion
+potion
+5
+super potion
+super potion
+super potion
+super potion
+super potion
+8
+x attack
+x attack
+x attack
+x attack
+x attack
+x attack
+x attack
+x attack
+5
+x defense
+x defense
+x defense
+x defense
+x defense
