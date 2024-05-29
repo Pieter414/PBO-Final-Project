@@ -98,7 +98,7 @@ public class MonsterBoxDisplay extends BaseLayer implements ActionListener {
             else if (i == 2) monster = player.getMonster3();
 
             if (monster != null) {
-                JLabel monsterLabel = new JLabel("<html>" + monster.getName() + "<br>Level: " + monster.getLevel() + "<br>HP: " + monster.getHP() + "<br>EP: " + monster.getEP() + "</html>");
+                JLabel monsterLabel = new JLabel("<html>" + monster.getName() + "<br>Level: " + monster.getLevel() + "<br>HP: " + monster.getHP() + " / " + monster.getMaxHP() + "<br>EP: " + monster.getEP() + "</html>");
                 monsterLabel.setBounds(xPosition, 5, 150, 100);
                 getContentPane().add(monsterLabel);
 
@@ -217,7 +217,7 @@ public class MonsterBoxDisplay extends BaseLayer implements ActionListener {
             newMonsterEvolve.setCanEvolve(false);
         }
         else if (monster instanceof WaterMonster){
-            newMonsterEvolve = new IcedMonster("Water Monster", monster.getLevel(), monster.getMaxHP());
+            newMonsterEvolve = new IcedMonster("Ice Monster", monster.getLevel(), monster.getMaxHP());
             newMonsterEvolve.setHP(monster.getHP());
             newMonsterEvolve.setEP(monster.getEP());
         }
@@ -239,12 +239,5 @@ public class MonsterBoxDisplay extends BaseLayer implements ActionListener {
         return newMonsterEvolve;
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            Player player = new Player("n");
-            MonsterBoxDisplay bs = new MonsterBoxDisplay(player);
-            bs.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            bs.setVisible(true);
-        });
-    }
+
 }
