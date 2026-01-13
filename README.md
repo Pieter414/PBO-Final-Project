@@ -30,7 +30,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Pieter414/PBO-Final-Project">
+  <a href="https://github.com/Pieter414/poke-monster-game">
     <img src="assets/images/saveIcon.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -39,14 +39,14 @@
   <p align="center">
     project_description
     <br />
-    <a href="https://github.com/Pieter414/PBO-Final-Project"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Pieter414/poke-monster-game"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Pieter414/PBO-Final-Project">View Demo</a>
+    <a href="https://github.com/Pieter414/poke-monster-game">View Demo</a>
     ·
-    <a href="https://github.com/Pieter414/PBO-Final-Project/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/Pieter414/poke-monster-game/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/Pieter414/PBO-Final-Project/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/Pieter414/poke-monster-game/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -136,7 +136,7 @@ To run the game:
 - Back button in Item Display doesn't show the icon wanted.
 
 
-See the [open issues](https://github.com/Pieter414/PBO-Final-Project/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/Pieter414/poke-monster-game/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -154,7 +154,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Pieter Christy Yan Yudhistira- [linkedin-url](https://www.linkedin.com/in/pieter-christy-yan-yudhistira/) - pieterchristyan7@gmail.com
 
-Project Link: [https://github.com/Pieter414/Projects/tree/main/PBO-Final-Project](https://github.com/Pieter414/PBO-Final-Project)
+Project Link: [https://github.com/Pieter414/Projects/tree/main/poke-monster-game](https://github.com/Pieter414/poke-monster-game)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -183,16 +183,16 @@ Sincerely, our team member:
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Pieter414/PBO-Final-Project.svg?style=for-the-badge
-[contributors-url]: https://github.com/Pieter414/PBO-Final-Project/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Pieter414/PBO-Final-Project.svg?style=for-the-badge
-[forks-url]: https://github.com/Pieter414/PBO-Final-Project/network/members
-[stars-shield]: https://img.shields.io/github/stars/Pieter414/PBO-Final-Project.svg?style=for-the-badge
-[stars-url]: https://github.com/Pieter414/PBO-Final-Project/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Pieter414/PBO-Final-Project.svg?style=for-the-badge
-[issues-url]: https://github.com/Pieter414/PBO-Final-Project/issues
-[license-shield]: https://img.shields.io/github/license/Pieter414/PBO-Final-Project.svg?style=for-the-badge
-[license-url]: https://github.com/Pieter414/PBO-Final-Project/blob/main/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/Pieter414/poke-monster-game.svg?style=for-the-badge
+[contributors-url]: https://github.com/Pieter414/poke-monster-game/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Pieter414/poke-monster-game.svg?style=for-the-badge
+[forks-url]: https://github.com/Pieter414/poke-monster-game/network/members
+[stars-shield]: https://img.shields.io/github/stars/Pieter414/poke-monster-game.svg?style=for-the-badge
+[stars-url]: https://github.com/Pieter414/poke-monster-game/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Pieter414/poke-monster-game.svg?style=for-the-badge
+[issues-url]: https://github.com/Pieter414/poke-monster-game/issues
+[license-shield]: https://img.shields.io/github/license/Pieter414/poke-monster-game.svg?style=for-the-badge
+[license-url]: https://github.com/Pieter414/poke-monster-game/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/pieter-christy-yan-yudhistira/
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
